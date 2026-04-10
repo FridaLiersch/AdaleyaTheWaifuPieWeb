@@ -1,5 +1,211 @@
 
+<body>
+  <video autoplay muted loop playsinline id="bg-video">
+  <source src="hatsunemiku60video.mp4" type="video/mp4">
+</video>
+</body>
 
+<style>
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* pushes it behind everything */
+}
+</style>
+
+<div class="overlay"></div>
+
+<style>
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 0;
+  pointer-events: none;
+}
+</style>
+
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>
+      Adaleya
+    </h1>
+  </body>
+</html>
+ 
+<style>
+   h1 {
+  font-family: 'Cormorant Garamond', serif; /* change font here */
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 10px rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 50px; /* move text lower */
+  font-size: 68px;
+}
+</style>
+
+
+ 
+<div class="content">
+  <div class="wrapper">
+<style>
+  
+  .container:first-child {
+  margin-left: 0px; /* move it right */
+}
+.wrapper {
+  display: flex;
+  gap: 50px; /* space between the three items */
+}
+
+/* EACH ITEM */
+.wrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+.container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+/* VIDEO */
+.container video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+/* IMAGE */
+.container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  transition: opacity 0.4s ease;
+}
+#thewaifupie {
+  width: 250px; 
+}
+#thewaifupie {
+  position: absolute;
+  top: 50px;   /* adjust vertical position */
+  left: 46%;
+  transform: translateX(-50%); /* centers it */
+  width: 270px; /* size control */
+  z-index: 10;  /* puts it ABOVE the title */
+  transform: rotate(17deg);
+  }
+
+h1 {
+  text-align: center;
+  position: relative;
+  z-index: 1; /* keeps title below image */
+}
+
+
+/* HOVER */
+.container:hover img {
+  opacity: 0;
+}
+</style>
+
+<body>
+
+<div class="wrapper">
+
+
+  <img src="thewaifupie.png" id="thewaifupie">
+
+  <!-- FIRST ITEM -->
+  <div class="container">
+    <video muted loop>
+      <source src="videofruitsheet.mp4" type="video/mp4">
+    </video>
+    <img src="DSC03944.jpg" alt="cover image">
+  </div>
+
+  <!-- SECOND ITEM -->
+  <div class="container">
+    <video muted loop>
+      <source src="strawberryvideo.mp4" type="video/mp4">
+    </video>
+    <img src="DSC03968.jpg" alt="cover image">
+  </div>
+
+  <!-- THIRD ITEM -->
+  <div class="container">
+    <video muted loop>
+      <source src="pievideo.mp4" type="video/mp4">
+    </video>
+    <img src="DSC04049.jpg" alt="cover image">
+  </div>
+  
+
+  <!-- FOURTH ITEM-->
+  <div class="container">
+    <video muted loop>
+        <source src="coffeevideo.mp4" type="video/mp4">
+    </video>
+    <img src="DSC04050.jpg" alt="cover image">
+  </div> 
+
+  <!-- FIFTH ITEM-->
+  <div class="container">
+    <video muted loop>
+        <source src="coffeevideo.mp4" type="video/mp4">
+    </video>
+    <img src="DSC04050.jpg" alt="cover image">
+  </div> 
+
+    <!-- SIXT ITEM-->
+  <div class="container">
+    <video muted loop>
+        <source src="coffeevideo.mp4" type="video/mp4">
+    </video>
+    <img src="DSC04050.jpg" alt="cover image">
+  </div> 
+
+<script>
+  
+const containers = document.querySelectorAll('.container');
+
+containers.forEach(container => {
+  const video = container.querySelector('video');
+
+  container.addEventListener('mouseenter', () => {
+    video.play();
+  });
+
+  container.addEventListener('mouseleave', () => {
+    video.pause();
+    video.currentTime = 0;
+  });
+});
+</script>
+
+</body>
+
+
+  </div>
+</div>
 
 <style>
 .wrapper {
@@ -10,8 +216,8 @@
 /* EACH ITEM */
 .container {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   overflow: hidden;
 }
 
@@ -65,10 +271,11 @@
   <!-- THIRD ITEM -->
   <div class="container">
     <video muted loop>
-      <sourse src="pievideo.mp4" type="video/mp4">
+      <source src="pievideo.mp4" type="video/mp4">
     </video>
     <img src="DSC04049.jpg" alt="cover image">
   </div>
+  
 
   <!-- FOURTH ITEM-->
   <div class="container">
