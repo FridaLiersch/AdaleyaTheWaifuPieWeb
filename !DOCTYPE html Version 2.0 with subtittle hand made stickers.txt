@@ -67,7 +67,6 @@ h1 {
   transform: translateX(-50%) rotate(17deg);
   width: 270px;
   z-index: 3;
-  pointer-events: none;
 }
 
 /* ================= WRAPPER ================= */
@@ -111,29 +110,11 @@ h1 {
   opacity: 0;
 }
 
-.page {
-  display: none;
-}
-
-.page.active {
-  display: block;
-}
-
-.custom-text {
-  cursor: pointer; /* makes it clickable */
-}
-
 </style>
 </head>
 
-
-
-
 <body>
 
-
-
-<body> 
 <!-- BACKGROUND VIDEO -->
 <video autoplay muted loop playsinline id="bg-video">
   <source src="hatsunemiku60video.mp4" type="video/mp4">
@@ -141,81 +122,35 @@ h1 {
 
 <div class="overlay"></div>
 
-<!-- ================= HOME ================= -->
-<div id="home" class="page active">
+<!-- TITLE -->
+<h1>Adaleya</h1>
 
-  <h1>Adaleya</h1>
+<!-- Hand painted stickers originals -->
+<p class="custom-text">
+  Originals and Fan Art hand-painted textured stickers
+</p>
 
-  <p class="custom-text" onclick="changePage('stickers')">
-    Home Stickers ✨
-  </p>
+<!-- LOGO -->
+<img src="thewaifupie.PNG" id="thewaifupie">
 
-  <p class="custom-text" onclick="changePage('skirts')">
-    Handmade Skirts 
-  </p>
+<!-- GALLERY -->
+<div class="wrapper">
 
-  <p class="custom-text" onclick="changePage('prints')">
-    Prints 
-  </p>
-
-  <p class="custom-text" onclick="changePage('cosplay')">
-    My Cosplay Prints 
-  </p>
-
-  <img src="thewaifupie.PNG" id="thewaifupie">
-
-  <div class="wrapper">
-    <!-- your gallery stays here exactly the same -->
+  <div class="container">
+    <video muted loop>
+      <source src="videofruitsheet.mp4" type="video/mp4">
+    </video>
+    <img src="DSC03944.jpg">
   </div>
 
-</div>
- 
-<!-- ================= SKIRTS PAGE ================= -->
-<div id="skirts" class="page">
-  <h1>Handmade Skirts </h1>
+  <div class="container">
+    <video muted loop>
+      <source src="strawberryvideo.mp4" type="video/mp4">
+    </video>
+    <img src="DSC03968.jpg">
+  </div>
 
-  <p class="custom-text" onclick="goHome()">← Back to Home</p>
-</div>
-
-<!-- ================= PRINTS PAGE ================= -->
-<div id="prints" class="page">
-  <h1>Prints </h1>
-
-  <p class="custom-text" onclick="goHome()">← Back to Home</p>
-</div>
-
-<!-- ================= COSPLAY PAGE ================= -->
-<div id="cosplay" class="page">
-  <h1>My Cosplay Prints </h1>
-
-  <p class="custom-text" onclick="goHome()">← Back to Home</p>
-</div>
-
-<!-- ================= STICKERS PAGE ================= -->
-<div id="stickers" class="page">
-  <h1>Home Stickers </h1>
-
-  <p class="custom-text" onclick="goHome()">← Back to Home</p>
-</div>
-
- <!-- GALLERY -->
-  <div class="wrapper">
-
-    <div class="container">
-      <video muted loop>
-        <source src="videofruitsheet.mp4" type="video/mp4">
-      </video>
-      <img src="DSC03944.jpg">
-    </div>
-
-    <div class="container">
-      <video muted loop>
-        <source src="strawberryvideo.mp4" type="video/mp4">
-      </video>
-      <img src="DSC03968.jpg">
-    </div>
-
-    <div class="container">
+  <div class="container">
     <video muted loop>
       <source src="pievideo.mp4" type="video/mp4">
     </video>
@@ -272,23 +207,11 @@ h1 {
     <img src="DSC04050.jpg">
   </div>
 
-
-  </div>
+  
 
 </div>
-</body>
-
-
-
-
-
-
-
-
-
 
 <!-- SCRIPT -->
-
 <script>
 const containers = document.querySelectorAll('.container');
 
@@ -306,15 +229,5 @@ containers.forEach(container => {
 });
 </script>
 
-<script>
-function changePage(page) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById(page).classList.add('active');
-}
-
-function goHome() {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById("home").classList.add('active');
-}
-</script>
-
+</body>
+</html>

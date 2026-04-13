@@ -288,24 +288,6 @@ h1 {
 
 
 <!-- SCRIPT -->
-
-<script>
-const containers = document.querySelectorAll('.container');
-
-containers.forEach(container => {
-  const video = container.querySelector('video');
-
-  container.addEventListener('mouseenter', () => {
-    video.play();
-  });
-
-  container.addEventListener('mouseleave', () => {
-    video.pause();
-    video.currentTime = 0;
-  });
-});
-</script>
-
 <script>
 function changePage(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
