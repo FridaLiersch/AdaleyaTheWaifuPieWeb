@@ -123,6 +123,10 @@ h1 {
   cursor: pointer; /* makes it clickable */
 }
 
+/* STICKER PAGE */
+#stickers .wrapper {
+  margin-top: 60px;
+}
 </style>
 </head>
 
@@ -147,7 +151,7 @@ h1 {
   <h1>Adaleya</h1>
 
   <p class="custom-text" onclick="changePage('stickers')">
-    Home Stickers ✨
+    Stickers ✨
   </p>
 
   <p class="custom-text" onclick="changePage('skirts')">
@@ -193,12 +197,14 @@ h1 {
 
 <!-- ================= STICKERS PAGE ================= -->
 <div id="stickers" class="page">
-  <h1>Home Stickers </h1>
 
-  <p class="custom-text" onclick="goHome()">← Back to Home</p>
-</div>
+  <h1>Stickers ✨</h1>
 
- <!-- GALLERY -->
+  <p class="custom-text" onclick="showPage('home')">
+    ← Back to Home
+  </p>
+
+  <!-- GALLERY -->
   <div class="wrapper">
 
     <div class="container">
@@ -216,75 +222,15 @@ h1 {
     </div>
 
     <div class="container">
-    <video muted loop>
-      <source src="pievideo.mp4" type="video/mp4">
-    </video>
-    <img src="DSC04049.jpg">
-  </div>
-
-    <div class="container">
-    <video muted loop>
-      <source src="pievideo.mp4" type="video/mp4">
-    </video>
-    <img src="DSC04049.jpg">
-  </div>
-
-  <div class="container">
-    <video muted loop>
-      <source src="coffeevideo.mp4" type="video/mp4">
-    </video>
-    <img src="DSC04050.jpg">
-  </div>
-
-  
-  <div class="container">
-    <video muted loop>
-      <source src="videofruitsheet.mp4" type="video/mp4">
-    </video>
-    <img src="DSC03944.jpg">
-  </div>
-
-  <div class="container">
-    <video muted loop>
-      <source src="strawberryvideo.mp4" type="video/mp4">
-    </video>
-    <img src="DSC03968.jpg">
-  </div>
-
-  <div class="container">
-    <video muted loop>
-      <source src="pievideo.mp4" type="video/mp4">
-    </video>
-    <img src="DSC04049.jpg">
-  </div>
-
-    <div class="container">
-    <video muted loop>
-      <source src="pievideo.mp4" type="video/mp4">
-    </video>
-    <img src="DSC04049.jpg">
-  </div>
-
-  <div class="container">
-    <video muted loop>
-      <source src="coffeevideo.mp4" type="video/mp4">
-    </video>
-    <img src="DSC04050.jpg">
-  </div>
-
+      <video muted loop>
+        <source src="videofruitsheet.mp4" type="video/mp4">
+      </video>
+      <img src="DSC03944.jpg">
+    </div>
 
   </div>
 
 </div>
-</body>
-
-
-
-
-
-
-
-
 
 
 <!-- SCRIPT -->
@@ -317,4 +263,15 @@ function goHome() {
   document.getElementById("home").classList.add('active');
 }
 </script>
+
+<script>
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.remove('active');
+  });
+
+  document.getElementById(pageId).classList.add('active');
+}
+</script>
+
 
