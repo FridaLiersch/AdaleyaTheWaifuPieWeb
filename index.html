@@ -123,18 +123,52 @@ h1 {
   cursor: pointer; /* makes it clickable */
 }
 
+
 /* STICKER PAGE */
 #stickers .wrapper {
   margin-top: 60px;
 }
+/* PRINT PAGE FIX */
+#prints .print-card {
+  position: relative;
+  width: 250px !important;
+  height: 380px !important;
+  flex: 0 0 auto; /* prevents stretching */
+  overflow: hidden;
+  border-radius: 0px;
+}
+
+#prints .print-card video,
+#prints .print-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* VIDEO */
+.print-card video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* IMAGE */
+.print-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+
+/* HOVER EFFECT */
+.print-card:hover .print-img {
+  opacity: 0;
+}
 </style>
 </head>
-
-
-
-
-<body>
-
 
 
 <body> 
@@ -154,12 +188,12 @@ h1 {
     Stickers ✨
   </p>
 
-  <p class="custom-text" onclick="changePage('skirts')">
-    Handmade Skirts 
+    <p class="custom-text" onclick="changePage('prints')">
+    Prints 
   </p>
 
-  <p class="custom-text" onclick="changePage('prints')">
-    Prints 
+  <p class="custom-text" onclick="changePage('skirts')">
+    Handmade Skirts 
   </p>
 
   <p class="custom-text" onclick="changePage('cosplay')">
@@ -183,10 +217,26 @@ h1 {
 
 <!-- ================= PRINTS PAGE ================= -->
 <div id="prints" class="page">
-  <h1>Prints </h1>
+  <h1>Prints</h1>
 
+  <div class="wrapper">
+
+    <div class="print-card">
+
+      <video muted loop>
+        <source src="videofruitsheet.mp4" type="video/mp4">
+      </video>
+
+      <img src="print-anime-1-gohun.png" class="print-img">
+
+    </div>
+
+  </div>
   <p class="custom-text" onclick="goHome()">← Back to Home</p>
+  
 </div>
+
+  
 
 <!-- ================= COSPLAY PAGE ================= -->
 <div id="cosplay" class="page">
