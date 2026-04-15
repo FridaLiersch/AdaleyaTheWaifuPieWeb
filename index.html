@@ -128,7 +128,94 @@ h1 {
 #stickers .wrapper {
   margin-top: 60px;
 }
+
+
+
+
+/* Handmade Skirts PAGE */
+.skirt-card {
+  position: relative;
+  width: 280px;
+  height: 400px;
+  overflow: hidden; /* 👈 THIS is what "cuts" the video */
+  border-radius: 12px;
+}
+
+/* VIDEO = background */
+.skirt-card video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+/* IMAGE = top layer (defines shape visually) */
+.skirt-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.skirt-card {
+  transition: transform 0.3s ease;
+}
+
+.skirt-card:hover {
+  transform: scale(1.05);
+}
+
+
+
+
+
+/* COSPLAY PRINT PAGE */
+#cosplay .cosplay-card {
+  position: relative;
+  width: 260px;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 0px;
+}
+
+/* VIDEO + IMAGE --------------> SI FUNCIONA EL VIDEO!!!! <--------  */
+#cosplay .cosplay-card video, 
+.cosplay-card video {
+  display: none;
+}
+#cosplay .cosplay-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* HOVER EFFECT */  
+#cosplay .cosplay-card:hover .cosplay-img {
+  opacity: 100;
+}
+
+
+
+
+
+
+
 /* PRINT PAGE FIX */
+
+#prints .print-card-horizontal {
+  position: relative;
+  width: 380px !important;
+  height: 260px !important;
+  flex: 0 0 auto; /* prevents stretching */
+  overflow: hidden;
+  border-radius: 0px;
+}
+
+
 #prints .print-card {
   position: relative;
   width: 250px !important;
@@ -165,8 +252,10 @@ h1 {
 
 /* HOVER EFFECT */
 .print-card:hover .print-img {
-  opacity: 0;
+  opacity: 100;
 }
+
+
 </style>
 </head>
 
@@ -185,7 +274,7 @@ h1 {
   <h1>Adaleya</h1>
 
   <p class="custom-text" onclick="changePage('stickers')">
-    Stickers ✨
+    Stickers
   </p>
 
     <p class="custom-text" onclick="changePage('prints')">
@@ -209,10 +298,36 @@ h1 {
 </div>
  
 <!-- ================= SKIRTS PAGE ================= -->
-<div id="skirts" class="page">
-  <h1>Handmade Skirts </h1>
 
-  <p class="custom-text" onclick="goHome()">← Back to Home</p>
+<div id="skirts" class="page">
+  <h1>Handmade Skirts</h1>
+
+  <div class="wrapper">
+
+    <div class="skirt-card">
+      <video muted loop>
+        <source src="videofruitsheet.mp4" type="video/mp4">
+      </video>
+      <img src="Skirt.jpg" class="skirt-img">
+    </div>
+
+    <div class="skirt-card">
+      <video muted loop>
+        <source src="videofruitsheet.mp4" type="video/mp4">
+      </video>
+      <img src="Skirt-1.jpeg" class="skirt-img">
+    </div>
+
+    <div class="skirt-card">
+      <video muted loop>
+        <source src="videofruitsheet.mp4" type="video/mp4">
+      </video>
+      <img src="Skirt-2.jpeg" class="skirt-img">
+    </div>
+
+  </div>
+
+  <p class="custom-text" onclick="showPage('home')">← Back to Home</p>
 </div>
 
 <!-- ================= PRINTS PAGE ================= -->
@@ -224,10 +339,16 @@ h1 {
     <div class="print-card">
 
       <video muted loop>
-        <source src="videofruitsheet.mp4" type="video/mp4">
+        <source src="strawberryvideo.mp4" type="video/mp4">
       </video>
 
       <img src="print-anime-1-gohun.png" class="print-img">
+
+    </div>
+
+    <div class="print-card-horizontal"> 
+
+      <img src="A4-horizontal-frieren.png" class="print-img">
 
     </div>
 
@@ -238,12 +359,32 @@ h1 {
 
   
 
-<!-- ================= COSPLAY PAGE ================= -->
-<div id="cosplay" class="page">
-  <h1>My Cosplay Prints </h1>
 
-  <p class="custom-text" onclick="goHome()">← Back to Home</p>
+
+<!-- ================= COSPLAY PAGE ================= -->
+
+
+<div id="cosplay" class="page">
+  <h1>My cosplay Prints</h1>
+
+  <div class="wrapper">
+
+    <div class="cosplay-card">
+      <video muted loop>
+        <source src="videofruitsheet.mp4" type="video/mp4">
+      </video>
+      <img src="Print-cosplay-1-Rosario.png" class="cosplay-img">
+    </div>
+
+
+  </div>
+
+  <p class="custom-text" onclick="showPage('home')">← Back to Home</p>
 </div>
+
+
+
+ 
 
 <!-- ================= STICKERS PAGE ================= -->
 <div id="stickers" class="page">
@@ -286,16 +427,16 @@ h1 {
 <!-- SCRIPT -->
 
 <script>
-const containers = document.querySelectorAll('.container');
+const cards = document.querySelectorAll('.container, print-card, .skirt-card, .cosplay-card');
 
-containers.forEach(container => {
-  const video = container.querySelector('video');
+cards.forEach(card => {
+  const video = card.querySelector('video');
 
-  container.addEventListener('mouseenter', () => {
+  card.addEventListener('mouseenter', () => {
     video.play();
   });
 
-  container.addEventListener('mouseleave', () => {
+  card.addEventListener('mouseleave', () => {
     video.pause();
     video.currentTime = 0;
   });
