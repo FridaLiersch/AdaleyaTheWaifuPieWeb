@@ -305,17 +305,23 @@ h1 {
   <div class="wrapper">
 
     <div class="skirt-card">
-      
+      <video muted loop>
+        <source src="videofruitsheet.mp4" type="video/mp4">
+      </video>
       <img src="Skirt.jpg" class="skirt-img">
     </div>
 
     <div class="skirt-card">
-      
+      <video muted loop>
+        <source src="videofruitsheet.mp4" type="video/mp4">
+      </video>
       <img src="Skirt-1.jpeg" class="skirt-img">
     </div>
 
     <div class="skirt-card">
-      
+      <video muted loop>
+        <source src="videofruitsheet.mp4" type="video/mp4">
+      </video>
       <img src="Skirt-2.jpeg" class="skirt-img">
     </div>
 
@@ -332,7 +338,9 @@ h1 {
 
     <div class="print-card">
 
-      
+      <video muted loop>
+        <source src="strawberryvideo.mp4" type="video/mp4">
+      </video>
 
       <img src="print-anime-1-gohun.png" class="print-img">
 
@@ -362,7 +370,9 @@ h1 {
   <div class="wrapper">
 
     <div class="cosplay-card">
-       
+      <video muted loop>
+        <source src="videofruitsheet.mp4" type="video/mp4">
+      </video> 
       <img src="Print-cosplay-1-Rosario.png" class="cosplay-img">
     </div>
 
